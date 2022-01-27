@@ -1,0 +1,138 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button class="backbtn" routerLink="/home" routerDirection="back">
+        <img src="../../assets/back-dark.svg" />
+      </ion-button>
+    </ion-buttons>
+
+    <!-- <ion-buttons slot="end">
+      <ion-button>
+        <ion-icon name="search-outline" color="dark"></ion-icon>
+      </ion-button>
+      <ion-button class="notification">
+        <ion-icon name="notifications-outline" color="dark"></ion-icon>
+        <span>&nbsp;</span>
+      </ion-button>
+    </ion-buttons> -->
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-slides pager="true" class="product-slider">
+    
+    <ion-slide>
+      <img class="img" [src]="productImagen1" />
+    </ion-slide>
+    <ion-slide>
+      <img class="img" [src]="productImagen2" />
+    </ion-slide>
+    <ion-slide>
+      <img class="img" [src]="productImagen3" />
+    </ion-slide>
+    
+  </ion-slides>
+  
+  <div class="ion-padding-vertical let">
+    <p class="item-name">{{ productNombre }}</p>
+    <!-- {{ productNombre }} -->
+    <br>
+    <p class="title-price">Precio</p>
+    <h4 class="price">
+      ${{ productPrecio }}
+      <!-- <span class="real-price">$62.000</span> -->
+    </h4>
+  </div>
+
+  <!-- <div class="review">
+    <ion-row>
+      <ion-col size="6">
+        <div class="rating">
+          4.5
+        </div>
+
+        Muy bueno
+      </ion-col>
+      <ion-col size="6">
+        <div class="count">49 Vistas</div>
+      </ion-col>
+    </ion-row>
+  </div> -->
+
+  <div class="separator">
+    <hr>
+  </div>
+
+  <div class="description let">
+    
+    <h5 class="title-description">Descripción</h5>
+    <p class="p-description"> {{ productDescripcion }} </p>
+    <br>
+    <div class="separator"><hr></div>
+    <br>
+    <p class="title-contraentrega">nuestros envios tardan de 2 a 4 dias, unicamente pago contraentrega, actualmente nuestro proveedor aliado para envíos es: </p>
+    <img class="img-servientrega" src="./../../assets/servientrega-logo.jpg" alt="">
+    <br><br><br><br><br><br><br><br>
+  </div>
+
+  <div class="separator">
+    <hr>
+  </div>
+
+  <!-- <div class="variation">
+    <ion-segment (ionChange)="segmentChanged($event)" value="size">
+      <ion-segment-button value="size">
+        <ion-label>Talla</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="color">
+        <ion-label>Color</ion-label>
+      </ion-segment-button>
+    </ion-segment>
+  </div> -->
+  
+  <div class="separator">
+    <hr>
+  </div>
+
+  <!-- <div class="variation-selector">
+    <div class="sizes" [class.active-variation]="activeVariation == 'size'">
+      <div [class.active]="selectedSize == 1" (click)="changeSize(1)">
+        S
+      </div>
+      <div [class.active]="selectedSize == 2" (click)="changeSize(2)">
+        M
+      </div>
+      <div [class.active]="selectedSize == 3" (click)="changeSize(3)">
+        L
+      </div>
+      <div [class.active]="selectedSize == 4" (click)="changeSize(4)">
+        XL
+      </div>
+    </div>
+
+    <div class="colors" [class.active-variation]="activeVariation == 'color'">
+      <div [class.active]="selectedColor == 1" (click)="changeColor(1)">
+        NEGRO
+      </div>
+      <div [class.active]="selectedColor == 2" (click)="changeColor(2)">
+        VERDE
+      </div>
+      <div [class.active]="selectedColor == 3" (click)="changeColor(3)">
+        AZUL
+      </div>
+    </div>
+  </div> -->
+</ion-content>
+<ion-footer>
+  <ion-row>
+
+    <ion-col size="5">
+      <ion-button (click)="addToCart(productId, productNombre, productPrecio, productDescripcion, productImagen1, productImagen2, productImagen3)" color="light">Agregar al carrito</ion-button>
+    </ion-col>
+
+    <ion-col size="5">
+      <ion-button>Comprar ahora</ion-button>
+    </ion-col>
+
+  </ion-row>
+</ion-footer>
